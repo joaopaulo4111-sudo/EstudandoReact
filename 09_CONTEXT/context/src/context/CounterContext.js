@@ -1,8 +1,7 @@
 // 1 - Criar contexto
 import{createContext, useState} from 'react'
 
-const CounterContext = createContext()
-export default CounterContext
+export const CounterContext = createContext()
 
 // 2  - Criar provider
 export const CounterContextProvider = ({children}) => {
