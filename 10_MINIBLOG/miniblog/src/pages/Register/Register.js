@@ -19,7 +19,7 @@ const Register = () => {
 
     const user ={
       displayName,
-      email,
+      email: email.trim(),
       password
     }
     if(password !== confirmPassword){
@@ -27,7 +27,11 @@ const Register = () => {
       return
     }
 
-  
+    if(password.length < 6){
+      setError("A senha precisa conter pelo menos 6 caracteres!")
+      return
+    }
+
     await createUser(user)
   }
   useEffect(() => {
